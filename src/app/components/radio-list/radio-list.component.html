@@ -1,0 +1,17 @@
+<input type="text" [(ngModel)]="radio_search">
+<button (click)="getRadios($event)" *ngIf="page > 0">prev</button>
+<button (click)="getRadios($event)">find</button>
+<button (click)="getRadios($event)">next</button>
+
+<ul *ngIf="radio_list.length">
+  <li *ngFor="let r of radio_list">{{r.name}}</li>
+  <audio *ngFor="let r of radio_list" src="{{r.stream}}" controls preload></audio>
+</ul>
+
+<audio src="http://146.185.18.251:7000" controls preload></audio>
+
+<button (click)="one()">JJJ</button>
+
+<div class="loading" *ngIf="loading">LOADING</div>
+
+<button (click)="show()">SHOW</button>
